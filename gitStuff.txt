@@ -1,0 +1,12 @@
+git remote add origin https://github.com/MatrixMike/javaLowLevel2.git
+git branch -M main
+git push -u origin main
+
+Tue 27 Oct 2020 21:31:51 AEDT 
+
+When creating new repo - don't add readme straight away or .gitignore as this prevents the generation of instructions  that are shown above. 
+So now I have the instructions I could create repo again and let it(git) generate these files...
+
+
+
+
