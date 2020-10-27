@@ -7,6 +7,7 @@ import java.util.TreeSet;
 
 public class intersection2 {
     public static void main(String[] args) {
+		// Creating a tree set with customized comparator
         TreeSet<String> evenNumbers = new TreeSet<>(new CustomComparator());
 
         evenNumbers.add("Peach");        
