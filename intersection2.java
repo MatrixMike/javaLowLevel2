@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 public class intersection2 {
     public static void main(String[] args) {
-        TreeSet<String> evenNumbers = new TreeSet<>();   // was new CustomComparator()
+        TreeSet<String> evenNumbers = new TreeSet<>(new CustomComparator());
 
         evenNumbers.add("Peach");        
         evenNumbers.add("Orange");
