@@ -27,15 +27,7 @@ class Student
 	} 
 } 
 
-class Sortbyroll implements Comparator<Student> 
-{ 
-	// Used for sorting in ascending order of 
-	// roll number 
-	public int compare(Student a, Student b) 
-	{ 
-		return a.rollno - b.rollno; 
-	} 
-} 
+ 
 
 class Sortbyname implements Comparator<Student> 
 { 
@@ -74,3 +66,5 @@ public class comparator2 {
 			System.out.println(ar.get(i)); 
 	} 
 } 
+// ArrayList . get(n) appears to return the whole object ... 
+// could use in List View in App ?
