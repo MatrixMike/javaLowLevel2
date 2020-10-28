@@ -20,17 +20,12 @@ class Student
 		this.address = address; 
 	} 
 
-/*
 	// Used to print student details in main() 
 	public String toString() 
 	{ 
 		return this.rollno + " - " + this.name + 
 						" " + this.address; 
-	}
-
-
-*/
- 
+	} 
 } 
 
  
