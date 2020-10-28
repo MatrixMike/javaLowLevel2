@@ -12,3 +12,15 @@ class Sortbyroll implements Comparator<Student>
 		return a.rollno - b.rollno; 
 	} 
 }
+
+/*
+ * class Sortbyheight implements Comparator<Student> 
+{ 
+	// Used for sorting in ascending order of 
+	// roll number 
+	public double compare(Student a, Student b) 
+	{ 
+		return a.height - b.height; 
+	} 
+}
+*/

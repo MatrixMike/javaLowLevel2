@@ -9,7 +9,8 @@ class Student
 { 
 	int rollno; 
 	String name, address; 
-
+	double height;
+	
 	// Constructor 
 	public Student(int rollno, String name, 
 							String address) 
