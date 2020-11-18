@@ -13,48 +13,52 @@
 import java.util.stream.LongStream;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import static java.lang.System.out;
+import static java.util.Calendar.DAY_OF_MONTH;
+import static java.util.Calendar.DAY_OF_YEAR;
+
 public class ChristmasDaysTo {
-	
-public static void xmas () {
-	Calendar cldr = Calendar.getInstance();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
-	Calendar cldr_now;
-	SimpleDateFormat dateformatter =   new SimpleDateFormat("dd-MMM-yyyy");  // ("dd-MM-yyyy E 'at' hh:mm:ss a zzz");
-	String testStr;	
-	long next13th = 99;
+
+//public class xmas {
+    public  static void xmas2() {
+        Calendar cldr = Calendar.getInstance ();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
+        Calendar cldr_now;
+        SimpleDateFormat dateformatter = new SimpleDateFormat ("dd-MMM-yyyy");  // ("dd-MM-yyyy E 'at' hh:mm:ss a zzz");
+        String testStr;
+        long next13th = 99;
 //	testStr = "fred";
-	int daysAhead = 1000;
-	int first_time_through = 0 ;			// change to boolean 
-	int dateDiff;
-	System.out.println("Next Friday the thirteenth is on");
-	for (long n= - cldr.get(Calendar.DAY_OF_MONTH); n<daysAhead;  n=n+1) {  // n was int now long
-		// find current first of month       
-		// F13 -> 13, 6
-		// Monday 9 -> 9, 2        
-		if ( (cldr.get(Calendar.DAY_OF_MONTH)==13) &&
-		(cldr.get(Calendar.DAY_OF_WEEK)==6) ) 
-		{
-			testStr = dateformatter.format(cldr.getTime());
-			System.out.print(testStr);
-			if (first_time_through == 0){
-				cldr_now = Calendar.getInstance(); 
-				dateDiff = (cldr.get(Calendar.DAY_OF_YEAR) - cldr_now.get(Calendar.DAY_OF_YEAR));
-				System.out.print(" which is in "+ dateDiff + " days. ");
-	        	first_time_through++ ; 
-	        	// save n and calculate difference between n and today -> i.e. n 
-	        	// display as a 
-	        	next13th = n;
-	        	System.out.println(" next 13 is " + next13th + " DOM "+ cldr.get(Calendar.DAY_OF_MONTH));
-				}
-			System.out.println();
-		}
-	    cldr.add(Calendar.DAY_OF_YEAR, +1);
-	 }
+        int daysAhead = 1000;
+        out.println ("Next Friday the thirteenth is on");
+        // change to boolean
+        int first_time_through = 0;
+        for (long n = -cldr.get (DAY_OF_MONTH); n < daysAhead; n = n + 1) {  // n was int now long
+            // find current first of month
+            // F13 -> 13, 6
+            // Monday 9 -> 9, 2
+            if ((cldr.get (DAY_OF_MONTH) == 13) &&
+                    (cldr.get (Calendar.DAY_OF_WEEK) == 6)) {
+                testStr = dateformatter.format (cldr.getTime ());
+                out.print (testStr);
+                if (first_time_through == 0) {
+                    cldr_now = Calendar.getInstance ();
+                    int dateDiff = (cldr.get (DAY_OF_YEAR) - cldr_now.get (DAY_OF_YEAR));
+                    out.print (" which is in " + dateDiff + " days. ");
+                    first_time_through++;
+                    // save n and calculate difference between n and today -> i.e. n
+                    // display as a
+                    next13th = n;
+                    out.println (" next 13 is " + next13th + " DOM " + cldr.get (DAY_OF_MONTH));
+                }
+                out.println ();
+            }
+            cldr.add (DAY_OF_YEAR, +1);
+        }
 //	 System.out.println("Number of dates found is "+first_time_through);  // wrong - bug
 //	System.out.println(factorialStreamsMJH(16));
 //	System.out.println(EventsWithStreams(300));
-}
+    }
 
-    public static long factorialStreamsMJH(long n){
+    public  long factorialStreamsMJH(long n){
 	//	StringBuilder sb = new StringBuilder;
         return LongStream.rangeClosed(1, n)   //  was (1,31)
      
@@ -67,7 +71,8 @@ public static void xmas () {
       //  System.out.print( "number " + n);
     }
 
-    public static long EventsWithStreams(long n){
+    public  long EventsWithStreams(long n){
+		
 	//	StringBuilder sb = new StringBuilder;
         return LongStream.rangeClosed(1, n)   //  was (1,31)
      
@@ -79,8 +84,9 @@ public static void xmas () {
         .reduce(0, (long a, long b) -> a + b);
       //  System.out.print( "number " + n);
     }
-public static void main (String args[]) {
-	xmas();
-}
 
+	public static void main(String[] args){
+		xmas2();
+	}
+//}
 }
