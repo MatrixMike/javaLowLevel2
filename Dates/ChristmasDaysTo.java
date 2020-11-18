@@ -16,11 +16,16 @@ import java.util.*;
 import static java.lang.System.out;
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.DAY_OF_YEAR;
+import java.util.EnumSet;
+//import static java.time.DayOfWeek;
+//import static java.time.DayOfWeek;
+//import static final DayOfWeek FRIDAY;
 
 public class ChristmasDaysTo {
 
 //public class xmas {
     public  static void xmas2() {
+//		String x = valueOf("FRIDAY");
         Calendar cldr = Calendar.getInstance ();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
         Calendar cldr_now;
         SimpleDateFormat dateformatter = new SimpleDateFormat ("dd-MMM-yyyy");  // ("dd-MM-yyyy E 'at' hh:mm:ss a zzz");
@@ -36,9 +41,10 @@ public class ChristmasDaysTo {
             // F13 -> 13, 6
             // Monday 9 -> 9, 2
             if ((cldr.get (DAY_OF_MONTH) == 13) &&
-                    (cldr.get (Calendar.DAY_OF_WEEK) == 6)) {
+                    (cldr.get (Calendar.DAY_OF_WEEK) == 6)) { // was == 6 , want to use FRIDAY
                 testStr = dateformatter.format (cldr.getTime ());
                 out.print (testStr);
+                out.print (" p1 ");
                 if (first_time_through == 0) {
                     cldr_now = Calendar.getInstance ();
                     int dateDiff = (cldr.get (DAY_OF_YEAR) - cldr_now.get (DAY_OF_YEAR));
