@@ -71,7 +71,7 @@ public class ChristmasDaysTo {
       //  System.out.print( "number " + n);
     }
 
-    public  long EventsWithStreams(long n){
+    public  static long EventsWithStreams(long n){
 		
 	//	StringBuilder sb = new StringBuilder;
         return LongStream.rangeClosed(1, n)   //  was (1,31)
@@ -87,6 +87,7 @@ public class ChristmasDaysTo {
 
 	public static void main(String[] args){
 		xmas2();
+		EventsWithStreams(12);
 	}
 //}
 }
