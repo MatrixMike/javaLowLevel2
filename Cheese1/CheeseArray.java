@@ -140,9 +140,9 @@ public class CheeseArray {
             "Xanadu", "Xynotyro", "Yarg Cornish", "Yarra Valley Pyramid", "Yorkshire Blue",
             "Zamorano", "Zanetti Grana Padano", "Zanetti Parmigiano Reggiano"
     };
-//public ArrayList<String> items = new ArrayList<String>();
+public static ArrayList<String> items = new ArrayList<String>();
     public static ArrayList<String> asList() {
-        ArrayList<String> items = new ArrayList<String>();
+//        ArrayList<String> items = new ArrayList<String>();
         for (int i = 0, z = CHEESES.length ; i < z ; i++) {
             items.add(CHEESES[i]);
         }
@@ -151,7 +151,7 @@ public class CheeseArray {
 
 	public static void main (String[] args) {
 		asList();
-		System.out.println(" ", items);
+		System.out.println( items);  // add " ", for interesting error
 	}
 }
 
