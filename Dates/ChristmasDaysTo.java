@@ -25,14 +25,17 @@ public class ChristmasDaysTo {
 
 //public class xmas {
     public  static void xmas2() {
+		ArrayList<String> dateList = new ArrayList<String>();
 //		String x = valueOf("FRIDAY");
         Calendar cldr = Calendar.getInstance ();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
+        Integer cnt =1;
         Calendar cldr_now;
+        cldr.add (DAY_OF_YEAR, -100);
         SimpleDateFormat dateformatter = new SimpleDateFormat ("dd-MMM-yyyy");  // ("dd-MM-yyyy E 'at' hh:mm:ss a zzz");
         String testStr;
         long next13th = 99;
 //	testStr = "fred";
-        int daysAhead = 1000;
+        int daysAhead = 2500;
         out.println ("Next Friday the thirteenth is on");
         // change to boolean
         int first_time_through = 0;
@@ -43,8 +46,12 @@ public class ChristmasDaysTo {
             if ((cldr.get (DAY_OF_MONTH) == 13) &&
                     (cldr.get (Calendar.DAY_OF_WEEK) == 6)) { // was == 6 , want to use FRIDAY
                 testStr = dateformatter.format (cldr.getTime ());
+                out.print (cnt);
+                out.print (" ");
                 out.print (testStr);
                 out.print (" p1 ");
+                dateList.add(testStr);
+                cnt++;
                 if (first_time_through == 0) {
                     cldr_now = Calendar.getInstance ();
                     int dateDiff = (cldr.get (DAY_OF_YEAR) - cldr_now.get (DAY_OF_YEAR));
@@ -62,6 +69,7 @@ public class ChristmasDaysTo {
 //	 System.out.println("Number of dates found is "+first_time_through);  // wrong - bug
 //	System.out.println(factorialStreamsMJH(16));
 //	System.out.println(EventsWithStreams(300));
+		out.print(dateList);
     }
 
     public  static long factorialStreamsMJH(long n){
