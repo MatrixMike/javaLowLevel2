@@ -1,6 +1,6 @@
 /*
  * Friday13.java
- * 
+ *
  * Copyright 2015 Michael Hewitt <mikeh@electroteach.com>
  * 11 November 2015
  * Obviously did not get changed to reflect the title, see Friday13.java
@@ -9,7 +9,7 @@
  /*
  DAY_OF_WEEK was 3 = Tuesday ; 5 =Thursday
  */
-// package Friday13;   removed to make compile and run 
+// package Friday13;   removed to make compile and run
 import java.util.stream.LongStream;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -64,11 +64,11 @@ public class ChristmasDaysTo {
 //	System.out.println(EventsWithStreams(300));
     }
 
-    public  long factorialStreamsMJH(long n){
+    public  static long factorialStreamsMJH(long n){
 	//	StringBuilder sb = new StringBuilder;
         return LongStream.rangeClosed(1, n)   //  was (1,31)
-     
-	//	.filter( w -> (w % 2) ==1  )  // filter out those numbers from the modulus 
+
+	//	.filter( w -> (w % 2) ==1  )  // filter out those numbers from the modulus
 		.filter( w -> (w % 3) ==0  )  // pass through  Fizz 3
 		.filter( w -> (w % 5) ==0  )  // pass through  Buzz 5  thus together finds FizzBuzz
 //		.collect(Collector.toList());
@@ -78,11 +78,11 @@ public class ChristmasDaysTo {
     }
 
     public  static long EventsWithStreams(long n){
-		
+
 	//	StringBuilder sb = new StringBuilder;
         return LongStream.rangeClosed(1, n)   //  was (1,31)
-     
-	//	.filter( w -> (w % 2) ==1  )  // filter out those numbers from the modulus 
+
+	//	.filter( w -> (w % 2) ==1  )  // filter out those numbers from the modulus
 		.filter( w -> (w % 3) ==0  )  // pass through  Fizz 3
 		.filter( w -> (w % 5) ==0  )  // pass through  Buzz 5  thus together finds FizzBuzz
 //		.collect(Collector.toList());
@@ -93,7 +93,11 @@ public class ChristmasDaysTo {
 
 	public static void main(String[] args){
 		xmas2();
-		EventsWithStreams(12);
+		out.println();
+		out.println(factorialStreamsMJH(30));
+
+		out.println();
+		out.println(EventsWithStreams(30));
 	}
 //}
 }
