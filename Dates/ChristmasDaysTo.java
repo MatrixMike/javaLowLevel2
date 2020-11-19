@@ -24,7 +24,7 @@ import java.util.EnumSet;
 public class ChristmasDaysTo {
 
 //public class xmas {
-    public  static void xmas2() {
+    public  static ArrayList<String> xmas2() {
 		ArrayList<String> dateList = new ArrayList<String>();
 //		String x = valueOf("FRIDAY");
         Calendar cldr = Calendar.getInstance ();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
@@ -65,11 +65,13 @@ public class ChristmasDaysTo {
                 out.println ();
             }
             cldr.add (DAY_OF_YEAR, +1);
+
         }
 //	 System.out.println("Number of dates found is "+first_time_through);  // wrong - bug
 //	System.out.println(factorialStreamsMJH(16));
 //	System.out.println(EventsWithStreams(300));
-		out.print(dateList);
+//		out.print(dateList);
+		            return dateList;
     }
 
     public  static long factorialStreamsMJH(long n){
@@ -100,7 +102,8 @@ public class ChristmasDaysTo {
     }
 
 	public static void main(String[] args){
-		xmas2();
+		ArrayList <String> main1 = xmas2();
+		out.println(main1);
 		out.println();
 		out.println(factorialStreamsMJH(30));
 
