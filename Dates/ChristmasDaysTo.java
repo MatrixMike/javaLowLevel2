@@ -16,6 +16,7 @@ import java.util.*;
 import static java.lang.System.out;
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.DAY_OF_YEAR;
+import static java.util.Calendar.DAY_OF_WEEK;
 import java.util.EnumSet;
 //import static java.time.DayOfWeek;
 //import static java.time.DayOfWeek;
@@ -26,7 +27,7 @@ public class ChristmasDaysTo {
 //public class xmas {
     public  static ArrayList<String> xmas2() {
 		ArrayList<String> dateList = new ArrayList<String>();
-//		String x = valueOf("FRIDAY");
+//		String x = valueOf("FRIDAY");      Use getValue() instead.
         Calendar cldr = Calendar.getInstance ();  // change 'M' - MM -> 2 digits; MMM -> 3 letters
         Integer cnt =1;
         Calendar cldr_now;
@@ -43,8 +44,12 @@ public class ChristmasDaysTo {
             // find current first of month
             // F13 -> 13, 6
             // Monday 9 -> 9, 2
+            int dow = cldr.get (Calendar.DAY_OF_WEEK);
             if ((cldr.get (DAY_OF_MONTH) == 13) &&
-                    (cldr.get (Calendar.DAY_OF_WEEK) == 6)) { // was == 6 , want to use FRIDAY
+            (dow == Calendar.FRIDAY)  ){
+      //              (cldr.get (Calendar.DAY_OF_WEEK) == 6)) { // was == 6 , want to use FRIDAY
+//  (dow <= Calendar.FRIDAY)
+// https://stackoverflow.com/questions/10118225/check-if-day-of-week-is-between-monday-and-friday
                 testStr = dateformatter.format (cldr.getTime ());
                 out.print (cnt);
                 out.print (" ");
