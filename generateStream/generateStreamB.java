@@ -88,7 +88,9 @@ public static void Cstream_from_function() {
 			.limit(5)
 			.collect(Collectors.toList());
 			System.out.println(collect);
-*/			
+*/
+// so first create a stream of Integers : starting with a given value and increasing with spacing
+// then collect all the stream values into a List {filtering IN those that meet the Predicate }
 			Stream<Integer> infiniteStream2 = Stream.iterate(4764250, i -> i + spacing)
 			//			.filter(CBchanRange1)
 						.limit (20);
